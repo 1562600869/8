@@ -1,0 +1,22 @@
+{
+ "info":[
+         {"img":"img/banner1.png"},
+         {"img":"img/banner2.png"},
+         {"img":"img/banner3.png"}
+         ],
+   "info1":[
+            {"img":"img/nav1.png","p":"专家答","foot":"直问专家"},
+            {"img":"img/nav2.png","p":"专家答","foot":"直问专家"},
+            {"img":"img/nav3.png","p":"专家答","foot":"直问专家"},
+            {"img":"img/nav4.png","p":"专家答","foot":"直问专家"},
+            {"img":"img/nav5.png","p":"专家答","foot":"直问专家"}
+            ],
+       
+       "info2":[
+                {"img":"img/list2.png","h":"新生宝宝常见的异常症状，新手爸妈护理必看","p":"沈月华 上海国际和平","foot":"12.9"},
+                {"img":"img/list1.png","h":"新生宝宝常见的异常症状，新手爸妈护理必看","p":"沈月华 上海国际和平","foot":"12.9"}
+                
+                ]
+
+
+}

@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" /><meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<script src="js/jquery-3.1.1.min.js"></script>
+		<script src="js/angular-1.4.6.min.js"></script>
+		<script src="js/angular-ui-router.js"></script>
+		<script src="js/bootstrap.min.js"></script>
+		<script src="js/swiper.min.js" "></script>
+		<link rel="stylesheet" type="text/css" href="css/bootstrap.min.css"/>
+		<link rel="stylesheet" type="text/css" href="css/swiper.min.css"/>
+		<link rel="stylesheet" type="text/css" href="css/1.css"/>
+		<title></title>
+	</head>
+	<body ng-app="app">
+		<div id="footer" class="nav navbar-fixed-bottom">
+			<li>
+				<a ui-sref="btn">
+					<img src="img/footer1.png"/>
+				    <p>首页</p>
+				</a>
+				
+			</li>
+			<li>
+				<a ui-sref="btn1">
+					<img src="img/footer2.png"/>
+				<p>全球购</p>
+				</a>
+				
+			</li>
+			<li>
+				<a ui-sref="btn2">
+					<img src="img/footer3.png"/>
+				<p>开讲</p>
+				</a>
+				
+			</li>
+			<li>
+				<a ui-sref="btn3">
+					<img src="img/footer4.png"/>
+				<p>购物</p>
+				</a>
+				
+			</li>
+			<li>
+				<a ui-sref="btn4">
+					<img src="img/footer5.png"/>
+				<p>我的</p>
+				</a>
+				
+			</li>
+		</div>	
+		<ui-view></ui-view>
+	</body>
+	<script>
+		var app = angular.module("app",["ui.router"]);
+		app.controller("aaa",function($scope,$http){
+ 		
+			$http({
+				method:"get",
+				url:"http://127.0.0.1:5454/1"
+			}).then(function(data){
+				$scope.arr = data.data.info;
+				$scope.arr1 = data.data.info1;
+				$scope.arr2 = data.data.info2;
+			
+			})
+		})
+		app.config(function($stateProvider,$urlRouterProvider){
+			$urlRouterProvider.otherwise("/btn").when("/btn","btn/a")
+				
+			
+			$stateProvider
+			.state("btn",{
+				url:"/btn",
+				templateUrl:"跳转的页面/1.html"
+			})
+			
+		
+			.state("btn.a",{
+				url:"/a",
+				templateUrl:"跳转的页面/a.html",
+				controller:"aaa"
+			})
+			.state("btn.b",{
+				url:"/b",
+				template:"bbb"
+			
+			})
+			.state("btn.c",{
+				url:"/c",
+				template:"ccc"
+				
+			})
+			.state("btn.d",{
+				url:"/d",
+				template:"ddd"
+				
+			})
+			.state("btn1",{
+				url:"/btn1",
+				template:"第二页面"
+			})
+			.state("btn2",{
+				url:"/btn2",
+				template:"第三页面"
+			})
+			.state("btn3",{
+				url:"/btn3",
+				template:"第四页面"
+			})
+			.state("btn4",{
+				url:"/btn4",
+				template:"第五页面"
+			})
+		})
+	</script>
+</html>

@@ -1,0 +1,32 @@
+<div class="swiper-container" id="wrap">
+	<div class="swiper-wrapper">
+		<div class="swiper-slide" ng-repeat="a in arr">
+			<img src="{{a.img}}"/>
+		</div>
+		
+	</div>
+</div>
+<div class="act">
+	<li ng-repeat="b in  arr1">
+		<img src="{{b.img}}"/>
+		<p>{{b.p}}</p>
+		<span>{{b.foot}}</span>
+	</li>
+</div>
+<h4>即将开始</h4>
+<div class="act_a" ng-repeat="c in  arr2">
+	<li>
+		<img src="{{c.img}}"/>
+	</li>
+	<li>
+		<h4>{{c.h}}</h4>
+	    <span>{{c.p}}</span>
+	    <p>{{c.foot}}</p>
+	</li>
+</div>
+<script>
+	var swiper = new Swiper("#wrap",{
+		pagination:".swiper-pagination",
+		loop:"true"
+	});
+</script>
